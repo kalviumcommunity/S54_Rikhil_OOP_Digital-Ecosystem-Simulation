@@ -1,0 +1,70 @@
+package organisms;
+
+public class Organism {
+    protected String species;
+    protected int x, y; // Position in the ecosystem
+    protected int energy;
+    protected int age;
+    protected int maxAge;
+    protected int reproductiveAge;
+
+    // Constructor
+    public Organism(String species, int x, int y, int energy, int maxAge, int reproductiveAge) {
+        this.species = species;
+        this.x = x;
+        this.y = y;
+        this.energy = energy;
+        this.age = 0; // Organisms start at age 0
+        this.maxAge = maxAge;
+        this.reproductiveAge = reproductiveAge;
+    }
+
+    // Method to handle organism's death
+    public void die() {
+        this.energy = 0;
+        System.out.println(this.species + " has died.");
+    }
+
+    // Method to simulate aging
+    public void age() {
+        this.age += 1;
+        if (this.age > this.maxAge) {
+            die();
+        }
+    }
+
+    public void move() {
+        // Simple random movement within a grid
+        this.x += (int) (Math.random() * 3) - 1;  // -1, 0, or 1 in x-direction
+        this.y += (int) (Math.random() * 3) - 1;  // -1, 0, or 1 in y-direction
+    }
+
+    // Getters for the organism's state
+    public String getSpecies() {
+        return species;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getMaxAge() {
+        return maxAge;
+    }
+
+    public int getReproductiveAge() {
+        return reproductiveAge;
+    }
+}
