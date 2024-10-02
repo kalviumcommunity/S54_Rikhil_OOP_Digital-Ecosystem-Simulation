@@ -7,6 +7,7 @@ public class Organism {
     protected int age;
     protected int maxAge;
     protected int reproductiveAge;
+    private static int totalOrganisms;
 
     // Constructor
     public Organism(String species, int x, int y, int energy, int maxAge, int reproductiveAge) {
@@ -17,6 +18,11 @@ public class Organism {
         this.age = 0; // Organisms start at age 0
         this.maxAge = maxAge;
         this.reproductiveAge = reproductiveAge;
+        Organism.totalOrganisms++;
+    }
+
+    public static int getTotalOrganisms() {
+        return totalOrganisms;
     }
 
     // Method to handle organism's death
