@@ -10,6 +10,17 @@ public class Organism {
     private static int totalOrganisms;
 
     // Constructor
+    public Organism(){
+        this.x = 0;
+        this.y = 0;
+        this.energy = 0;
+        this.age = 0;
+        this.maxAge = 0;
+        this.reproductiveAge = 0;
+        this.species = "Sample";
+        Organism.totalOrganisms++;
+    }
+
     public Organism(String species, int x, int y, int energy, int maxAge, int reproductiveAge) {
         this.species = species;
         this.x = x;
