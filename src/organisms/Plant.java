@@ -12,8 +12,17 @@ public class Plant extends Organism {
     }
 
     @Override
-    public void move() {
-        // Plants don't move
+    public void age() {
+        this.age += 1;
+        if (this.age > this.maxAge) {
+            die();
+        }
+    }
+
+    @Override
+    public void die() {
+        this.energy = 0;
+        System.out.println(this.species + " has died.");
     }
 
     // Getters and setters for Plant-specific attributes
