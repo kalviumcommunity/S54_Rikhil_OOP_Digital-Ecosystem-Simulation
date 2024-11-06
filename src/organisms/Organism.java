@@ -1,6 +1,6 @@
 package organisms;
 
-public class Organism {
+public abstract class Organism {
     protected String species;
     protected int x, y; // Position in the ecosystem
     protected int energy;
@@ -37,24 +37,12 @@ public class Organism {
     }
 
     // Method to handle organism's death
-    public void die() {
-        this.energy = 0;
-        System.out.println(this.species + " has died.");
-    }
+    public abstract void die();
 
     // Method to simulate aging
-    public void age() {
-        this.age += 1;
-        if (this.age > this.maxAge) {
-            die();
-        }
-    }
+    public abstract void age();
 
-    public void move() {
-        // Simple random movement within a grid
-        this.x += (int) (Math.random() * 3) - 1;  // -1, 0, or 1 in x-direction
-        this.y += (int) (Math.random() * 3) - 1;  // -1, 0, or 1 in y-direction
-    }
+    public void move(){};
 
     // Getters for the organism's state
     public String getSpecies() {
