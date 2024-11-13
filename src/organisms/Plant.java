@@ -5,6 +5,11 @@ public class Plant extends Organism {
     private static int totalPlants;
 
     // Constructor
+    public Plant(){
+        super();
+        this.growthRate = 1;
+        Plant.totalPlants++;
+    }
     public Plant(String species, int x, int y, int energy, int maxAge, int reproductiveAge, int growthRate) {
         super(species, x, y, energy, maxAge, reproductiveAge);
         this.growthRate = growthRate;
